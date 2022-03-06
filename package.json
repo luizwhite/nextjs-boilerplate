@@ -9,8 +9,9 @@
     "lint": "eslint src --max-warnings=0",
     "lint:print-config-to-file": "eslint --print-config './src/*.ts' >",
     "prepare": "husky install",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand",
     "generate": "plop --plopfile generators/plopfile.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
